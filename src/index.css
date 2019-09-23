@@ -28,6 +28,7 @@ body {
     overflow: hidden;
     border-radius: 15px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 8px;
 }
 
 .RecordsList {
@@ -35,13 +36,6 @@ body {
     height: 504px;
     background-color: #1C233E;
     border-radius: 3px;
-}
-
-.RecordsList .columns {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    font-size: 8px;
 }
 
 .TitleBar {
@@ -53,22 +47,37 @@ body {
 
 .TitleBar h5 {
     font-size: 15px;
-    line-height: 10px;
-    margin: 15px 0 0 20px;
+    line-height: 12px;
+    font-weight: 400;
+    margin: 13px 0 0 20px;
 }
 
 .TitleBar p {
-    font-size: 8px;
     line-height: 7px;
-    margin: 7px 0 10px 20px;
+    margin: 5px 0 13px 20.5px;
+    font-weight: 300;
 }
 
-.Record {
-    padding: 0 20px 10px 20px;
-    display: flex;
-    justify-content: space-between;
+.records-table {
+    border-collapse: collapse;
+    min-width: 100%;
+    padding: 0px 20px;
 }
 
-.Record:hover {
+.records-table thead tr th {
+    text-align: left;
+    letter-spacing: 0.75px;
+    line-height: 7px;
+    font-weight: 700;
+    padding: 20px 0 13px 0;
+}
+
+.records-table tbody tr td {
+    line-height: 7px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+
+tbody tr:hover {
     background-color: #222B45;
 }
