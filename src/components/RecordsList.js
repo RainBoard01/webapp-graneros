@@ -82,8 +82,24 @@ const Table = ({ columns, data }) => {
                 {rows.map((row, i) => prepareRow(row) || (
                     <tr {...row.getRowProps()}>
                         {row.cells.map(cell => {
-                            if(cell.column.id === "dateIn" || cell.column.id === "dateOut") cell.value = getHour(cell.value);
-                            return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                            switch (cell.column.id) {
+                                case "dateIn":
+                                    cell.value = getHour(cell.value);
+                                    return <td { ...cell.getCellProps() } className='hour'>{cell.render('Cell')}</td>;
+                                case "dateOut":
+                                    cell.value = getHour(cell.value);
+                                    return <td { ...cell.getCellProps() } className='hour'>{cell.render('Cell')}</td>
+                                case "person.rut":
+                                    return <td { ...cell.getCellProps() } className='rut'>{cell.render('Cell')}</td>
+                                case "vehicle.type":
+                                    return <td { ...cell.getCellProps() } className='type'>{cell.render('Cell')}</td>
+                                case "vehicle.patente":
+                                    return <td { ...cell.getCellProps() } className='patente'>{cell.render('Cell')}</td>
+                                case "parcel.number":
+                                    return <td { ...cell.getCellProps() } className='parcel'>{cell.render('Cell')}</td>
+                                default:
+                                    return <td { ...cell.getCellProps() }>{cell.render('Cell')}</td>
+                            }
                         })}
                     </tr>
                 ))}
@@ -158,8 +174,8 @@ const RecordsList = () => {
     });
 
     return (
-        <div className='RecordsList'>
-            <TitleBar title='Registros' description='Mostrando los ultimos 12 ingresos al condominio'/>
+        <div className='section RecordsList'>
+            <TitleBar title='Registros' description='Mostrando los ultimos 10 ingresos al condominio'/>
             {
                 data ? (
                     <Table columns={columns} data={data.records} />

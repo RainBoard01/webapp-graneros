@@ -1,9 +1,10 @@
 import React from 'react';
+import logo from '../media/logo2.svg';
 
 const NavBar = () => {
     return (
         <div className='NavBar'>
-            <p>NavBar</p>
+            <img className='logo' src={ logo } alt='logo'/>
         </div>
     )
 }
