@@ -153,7 +153,7 @@ const RecordsList = () => {
         },
         operation: {
             query: `{
-                records(limit: 0) {
+                records(limit: 6) {
                     dateIn
                     person {
                         name

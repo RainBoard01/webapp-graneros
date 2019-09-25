@@ -5,6 +5,8 @@ import './index.css';
 import NavBar from './components/NavBar';
 import RecordsList from './components/RecordsList';
 import MainSection from './components/MainSection';
+import InputRecord from './components/InputRecord';
+import OptionsSection from './components/OptionsSection';
 
 const graphql = new GraphQL();
 
@@ -15,6 +17,8 @@ const App = () => {
         <NavBar/>
         <div className='dashboard'>
           <MainSection/>
+          <InputRecord/>
+          <OptionsSection/>
           <RecordsList/>
         </div>
       </div>  

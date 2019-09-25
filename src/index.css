@@ -14,7 +14,11 @@ body {
     font-size: 10px;
 }
 
-
+.section {
+    background-color: #1C233E;
+    border-radius: 3px;
+    overflow: hidden;
+}
 
 
 
@@ -25,14 +29,19 @@ body {
     background-color: #222B45;
     overflow: hidden;
     display: flex;
+    justify-content: space-between;
 }
 
 .NavBar div {
     display: flex;
-    margin-right: 30px;
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
     height: 30px;
     margin: auto;
 }
@@ -50,9 +59,19 @@ body {
 .NavBar button div {
     border-radius: 100%;
     overflow: hidden;
+    margin-right: 10px;
 }
 
 .profilePhoto {
+    display: flex;
+    align-items: center;
+}
+
+.profilePhoto p {
+    margin-right: 5px;
+}
+
+.profilePhoto div img {
     height: 35px;
 }
 
@@ -60,9 +79,7 @@ body {
     background-color: #343854;
 }
 
-.NavBar button:last-child {
-    float: right;
-}
+
 
 
 
@@ -73,17 +90,15 @@ body {
     background-color: transparent;
     overflow: hidden;
     border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
 }
 
-.section {
-    background-color: #1C233E;
-    border-radius: 3px;
-    overflow: hidden;
-}
 
-.RecordsList {
-    height: 360px;
-}
+
+
 
 .TitleBar {
     width: 100%;
@@ -103,6 +118,42 @@ body {
     line-height: 7px;
     margin: 5px 0 13px 25px;
     font-weight: 300;
+}
+
+
+
+
+
+.MainSection {
+    width: 100%;
+    height: 150px;
+}
+
+
+
+
+
+.InputRecord {
+    width: 600px;
+    height: 234px;
+}
+
+
+
+
+
+.OptionsSection {
+    width: 288px;
+    height: 234px;
+}
+
+
+
+
+
+.RecordsList {
+    width: 100%;
+    height: 255px;
 }
 
 .records-table {
@@ -159,9 +210,4 @@ body {
 .parcel {
     width: 55px;
     font-size: 18px;
-}
-
-.MainSection {
-    height: 294px;
-    margin-bottom: 15px;
 }

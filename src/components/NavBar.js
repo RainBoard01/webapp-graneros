@@ -10,16 +10,21 @@ const profile = {
 const NavBar = () => {
     return (
         <div className='NavBar'>
-            <button>
-                <img className='logo' src={ logo } alt='logo'/>
-            </button>
-            <button>Tablero</button>
-            <button>Listas</button>
-            <button>Estadisticas</button>
-            <button>
-                <div><img className='profilePhoto' src={ profilePhoto } alt="profilePhoto"/></div>
-                { profile.name }
-            </button>
+            <div>
+                <button className='logo'>
+                    <img src={ logo } alt='logo'/>
+                </button>
+                <button>Tablero</button>
+                <button>Listas</button>
+                <button>Estadisticas</button>
+            </div>
+            <div>
+                <button  className='profilePhoto'>
+                    <div><img src={ profilePhoto } alt="profilePhoto"/></div>
+                    <p>{ profile.name }</p>
+                    <span>v</span>
+                </button>
+            </div>
         </div>
     )
 }
