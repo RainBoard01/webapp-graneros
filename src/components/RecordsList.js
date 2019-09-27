@@ -1,65 +1,9 @@
 import React from 'react';
-import { useGraphQL } from 'graphql-react';
 import { useTable } from 'react-table';
+import { GetRecords } from '../graphql';
 
 import TitleBar from './TitleBar';
-/*import Record from './Record';*/
 import Errors from './Errors';
-
-/*const RecordsList = () => {
-    const { loading, cacheValue: { data, ...errors } = {} } = useGraphQL({
-        fetchOptionsOverride(options) {
-            options.url = 'http://192.168.0.109:4000/graphql'
-        },
-        operation: {
-            query: `{
-                records(limit: 0) {
-                    dateIn
-                    person {
-                        name
-                        rut
-                    }
-                    vehicle {
-                        type
-                        patente
-                    }
-                    parcel {
-                        number
-                    }
-                    observation
-                    dateOut
-                }
-            }`
-        }
-    });
-
-    return (
-        <div className='RecordsList'>
-            <TitleBar title='Registros' description='Mostrando los ultimos 12 ingresos al condominio'/>
-            <div className='columns'>
-                <span>INGRESO</span>
-                <span>NOMBRE</span>
-                <span>RUT</span>
-                <span>VEHICULO</span>
-                <span>PATENTE</span>
-                <span>PARCELA</span>
-                <span>OBSERVACION</span>
-                <span>SALIDA</span>
-            </div>
-            {
-                data ? (
-                    data.records.map(record => (
-                        <Record key={ data.records.indexOf(record) } id={ record.id }/>
-                    ))
-                ) : loading ? (
-                    'Loading...'
-                ) : (
-                    <Errors { ...errors }/>
-                )
-            }
-        </div>
-    );
-}*/
 
 const getHour = dateTime => dateTime ? dateTime.slice(11,16) : '';
 
@@ -147,31 +91,7 @@ const RecordsList = () => {
         []
     );
 
-    const { loading, cacheValue: { data, ...errors } = {} } = useGraphQL({
-        fetchOptionsOverride(options) {
-            options.url = 'http://192.168.0.109:4000/graphql'
-        },
-        operation: {
-            query: `{
-                records(limit: 6) {
-                    dateIn
-                    person {
-                        name
-                        rut
-                    }
-                    vehicle {
-                        type
-                        patente
-                    }
-                    parcel {
-                        number
-                    }
-                    observation
-                    dateOut
-                }
-            }`
-        }
-    });
+    const { loading, data, ...errors } = GetRecords(6);
 
     return (
         <div className='section RecordsList'>
